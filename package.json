@@ -21,6 +21,10 @@
     "react-ellipsis-text": "^1.2.1",
     "react-hook-form": "^7.71.1"
   },
+  "overrides": {
+    "@types/react": "$@types/react",
+    "@types/react-dom": "$@types/react-dom"
+  },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^19",
