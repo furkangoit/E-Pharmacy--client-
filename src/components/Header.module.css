@@ -1,0 +1,168 @@
+.header {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    margin: 0 auto;
+    position: relative;
+    z-index: 50;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--white);
+    text-decoration: none;
+}
+
+.logoIcon {
+    background: var(--white);
+    color: var(--primary-green);
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+/* Desktop Nav */
+.nav {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 999px;
+    padding: 4px;
+}
+
+.navItem {
+    padding: 8px 24px;
+    border-radius: 999px;
+    color: var(--white);
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+}
+
+.navItem:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.navItem.active {
+    background: var(--white);
+    color: var(--primary-green);
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.loginLink {
+    color: var(--white);
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.registerBtn {
+    border-color: var(--white) !important;
+    color: var(--white) !important;
+}
+
+.registerBtn:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Mobile Specifics */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 101;
+    /* Above overlay */
+}
+
+/* Mobile Menu Overlay */
+.mobileMenu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    /* Or could be partial width like 80% */
+    height: 100vh;
+    background-color: var(--primary-green);
+    /* Match design green */
+    z-index: 100;
+    padding: 100px 20px 40px;
+    /* Top padding for close button space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Center items vertically */
+    align-items: center;
+    gap: 2rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+.mobileNav {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    max-width: 240px;
+    align-items: center;
+}
+
+.mobileNavItem {
+    width: 100%;
+    background: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    text-align: center;
+    color: #8A8A89;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.mobileNavItem.active {
+    background: rgba(255, 255, 255, 0.3);
+    /* Transparent-ish look from screenshot active state */
+    color: white;
+    border: 1px solid white;
+}
+
+/* Alternate interpretation of screenshot active state: Green pill? 
+Actually screenshot shows "Home" is distinct. Let's make active stand out. */
+
+.mobileActions {
+    margin-top: auto;
+    /* Push to bottom */
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 768px) {
+
+    .nav,
+    .actions {
+        display: none;
+        /* Hide desktop nav */
+    }
+
+    .hamburger {
+        display: block;
+        /* Show hamburger */
+    }
+}

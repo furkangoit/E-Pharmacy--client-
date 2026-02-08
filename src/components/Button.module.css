@@ -1,0 +1,60 @@
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    /* Pill shape */
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    border: 1px solid transparent;
+    font-family: inherit;
+}
+
+/* Variants */
+.primary {
+    background-color: #598D66;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    /* Rounded pill shape */
+    font-weight: 600;
+}
+
+.primary:hover {
+    background-color: #4a7a53;
+    box-shadow: 0 4px 12px rgba(89, 177, 122, 0.3);
+}
+
+.outline {
+    background-color: transparent;
+    border-color: var(--primary-green);
+    color: var(--primary-green);
+}
+
+.outline:hover {
+    background-color: var(--light-green);
+}
+
+.danger {
+    background-color: #FFE5E5;
+    /* Light red */
+    color: #FF4D4F;
+    border-color: transparent;
+}
+
+/* Sizes */
+.small {
+    padding: 8px 16px;
+    font-size: 14px;
+}
+
+.medium {
+    padding: 12px 32px;
+    font-size: 16px;
+}
+
+.large {
+    padding: 16px 48px;
+    font-size: 18px;
+}

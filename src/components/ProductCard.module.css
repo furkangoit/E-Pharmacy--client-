@@ -1,0 +1,100 @@
+.card {
+    background: var(--white);
+    border-radius: 20px;
+    border: 1px solid #EDCF9E;
+    /* Light border color from design intuition or generic */
+    /* Actually design looks like very light grey or white with shadow, let's stick to simple border or shadow */
+    border: 1px solid #E8E8E8;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition: all 0.2s ease;
+    height: 100%;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.imageContainer {
+    width: 100%;
+    aspect-ratio: 1;
+    background: #F7F8FA;
+    /* OR white if image has background */
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    margin-bottom: 8px;
+    overflow: hidden;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    /* Tighter gap */
+    flex: 1;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 4px;
+}
+
+.name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1D1E21;
+    margin: 0;
+}
+
+.price {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #1D1E21;
+}
+
+.category {
+    font-size: 0.85rem;
+    color: #8A8A89;
+    margin-bottom: 16px;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    /* Push to bottom */
+}
+
+.addBtn {
+    background-color: #598D66 !important;
+    /* Green color */
+    color: white !important;
+    border-radius: 30px !important;
+    padding: 10px 24px !important;
+    font-weight: 600 !important;
+    font-size: 0.9rem !important;
+    border: none !important;
+    transition: opacity 0.2s;
+}
+
+.addBtn:hover {
+    opacity: 0.9;
+}
+
+.detailsLink {
+    font-size: 0.9rem;
+    color: #1D1E21;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    cursor: pointer;
+    font-weight: 500;
+}

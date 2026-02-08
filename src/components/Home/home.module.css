@@ -1,0 +1,228 @@
+.section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Main Banner */
+.mainBanner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Center content */
+    flex-direction: column;
+    /* Stack for centered look */
+    text-align: center;
+    background-color: #598D66;
+    /* Green theme */
+    border-radius: 0 0 40px 40px;
+    /* Only bottom rounded */
+    padding: 140px 20px 80px;
+    /* Extra top padding for Header */
+    margin-bottom: 60px;
+    position: relative;
+    overflow: hidden;
+    min-height: 600px;
+    /* Taller hero */
+}
+
+.bannerContent {
+    flex: 1;
+    z-index: 1;
+}
+
+.bannerTitle {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #1D1E21;
+    margin-bottom: 16px;
+    line-height: 1.2;
+}
+
+.bannerSubtitle {
+    font-size: 1.1rem;
+    color: #598D66;
+    margin-bottom: 0;
+}
+
+.bannerImage {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+/* Promo Banners */
+.promoGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 60px;
+}
+
+.promoCard {
+    background-color: #F9F9F9;
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 250px;
+    position: relative;
+    overflow: hidden;
+}
+
+.promoCard:nth-child(2) {
+    background-color: #EBF7F8;
+}
+
+.promoTitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.promoDiscount {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #598D66;
+    margin-bottom: 20px;
+}
+
+.promoAction {
+    margin-top: auto;
+    text-decoration: none;
+    font-weight: 600;
+    color: #1D1E21;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Stores Section */
+.storesHeader {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.storesTitle {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.storesSubtitle {
+    color: #8A8A89;
+}
+
+.storesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+/* Add Pharmacy Promo */
+.addPharmacySection {
+    background-color: #598D66;
+    color: white;
+    border-radius: 32px;
+    padding: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.addPharmacyContent {
+    flex: 1;
+}
+
+.addPharmacyTitle {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.addPharmacyDesc {
+    margin-bottom: 30px;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+.featuresList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* Allow wrapping on small screens */
+    gap: 30px;
+    margin-bottom: 80px;
+}
+
+.featuresList li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #1D1E21;
+}
+
+/* Reviews */
+.reviewsSection {
+    margin-bottom: 80px;
+}
+
+.reviewCard {
+    background: white;
+    border: 1px solid #EAEAEA;
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+}
+
+.reviewImage {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #EBF7F8;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.reviewName {
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.reviewText {
+    color: #8A8A89;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .mainBanner {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px;
+    }
+
+    .bannerTitle {
+        font-size: 2rem;
+    }
+
+    .addPharmacySection {
+        flex-direction: column;
+    }
+
+    .featuresList {
+        grid-template-columns: 1fr;
+    }
+}
