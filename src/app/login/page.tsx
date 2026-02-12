@@ -52,30 +52,42 @@ export default function LoginPage() {
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className={styles.formStack}>
                             <div>
-                                <InputGroup
-                                    placeholder="Email address"
-                                    type="email"
-                                    className={styles.customInput}
-                                    {...register('email', {
+                                {(() => {
+                                    const { ref, ...rest } = register('email', {
                                         required: 'Email is required',
                                         pattern: {
                                             value: /\S+@\S+\.\S+/,
                                             message: 'Invalid email address'
                                         }
-                                    })}
-                                    intent={errors.email ? 'danger' : 'none'}
-                                />
+                                    });
+                                    return (
+                                        <InputGroup
+                                            placeholder="Email address"
+                                            type="email"
+                                            className={styles.customInput}
+                                            inputRef={ref}
+                                            {...rest}
+                                            intent={errors.email ? 'danger' : 'none'}
+                                        />
+                                    );
+                                })()}
                                 {errors.email && <span style={{ color: 'red', fontSize: '0.8rem' }}>{errors.email.message as string}</span>}
                             </div>
 
                             <div>
-                                <InputGroup
-                                    placeholder="Password"
-                                    type="password"
-                                    className={styles.customInput}
-                                    {...register('password', { required: 'Password is required' })}
-                                    intent={errors.password ? 'danger' : 'none'}
-                                />
+                                {(() => {
+                                    const { ref, ...rest } = register('password', { required: 'Password is required' });
+                                    return (
+                                        <InputGroup
+                                            placeholder="Password"
+                                            type="password"
+                                            className={styles.customInput}
+                                            inputRef={ref}
+                                            {...rest}
+                                            intent={errors.password ? 'danger' : 'none'}
+                                        />
+                                    );
+                                })()}
                                 {errors.password && <span style={{ color: 'red', fontSize: '0.8rem' }}>{errors.password.message as string}</span>}
                             </div>
                         </div>

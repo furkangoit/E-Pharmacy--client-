@@ -55,55 +55,79 @@ export default function RegisterPage() {
                         <div className={styles.formGrid}>
                             {/* Row 1: Name & Email */}
                             <div>
-                                <InputGroup
-                                    placeholder="User Name"
-                                    className={styles.customInput}
-                                    {...register('name', { required: 'Name is required' })}
-                                    intent={errors.name ? 'danger' : 'none'}
-                                />
+                                {(() => {
+                                    const { ref, ...rest } = register('name', { required: 'Name is required' });
+                                    return (
+                                        <InputGroup
+                                            placeholder="User Name"
+                                            className={styles.customInput}
+                                            inputRef={ref}
+                                            {...rest}
+                                            intent={errors.name ? 'danger' : 'none'}
+                                        />
+                                    );
+                                })()}
                                 {errors.name && <span style={{ color: 'red', fontSize: '0.8rem' }}>{errors.name.message as string}</span>}
                             </div>
 
                             <div>
-                                <InputGroup
-                                    placeholder="Email address"
-                                    type="email"
-                                    className={styles.customInput}
-                                    {...register('email', {
+                                {(() => {
+                                    const { ref, ...rest } = register('email', {
                                         required: 'Email is required',
                                         pattern: {
                                             value: /\S+@\S+\.\S+/,
                                             message: 'Invalid email address'
                                         }
-                                    })}
-                                    intent={errors.email ? 'danger' : 'none'}
-                                />
+                                    });
+                                    return (
+                                        <InputGroup
+                                            placeholder="Email address"
+                                            type="email"
+                                            className={styles.customInput}
+                                            inputRef={ref}
+                                            {...rest}
+                                            intent={errors.email ? 'danger' : 'none'}
+                                        />
+                                    );
+                                })()}
                                 {errors.email && <span style={{ color: 'red', fontSize: '0.8rem' }}>{errors.email.message as string}</span>}
                             </div>
 
                             {/* Row 2: Phone & Password */}
                             <div>
-                                <InputGroup
-                                    placeholder="Phone number"
-                                    type="tel"
-                                    className={styles.customInput}
-                                    {...register('phone', { required: 'Phone is required' })}
-                                    intent={errors.phone ? 'danger' : 'none'}
-                                />
+                                {(() => {
+                                    const { ref, ...rest } = register('phone', { required: 'Phone is required' });
+                                    return (
+                                        <InputGroup
+                                            placeholder="Phone number"
+                                            type="tel"
+                                            className={styles.customInput}
+                                            inputRef={ref}
+                                            {...rest}
+                                            intent={errors.phone ? 'danger' : 'none'}
+                                        />
+                                    );
+                                })()}
                                 {errors.phone && <span style={{ color: 'red', fontSize: '0.8rem' }}>{errors.phone.message as string}</span>}
                             </div>
 
                             <div>
-                                <InputGroup
-                                    placeholder="Password"
-                                    type="password"
-                                    className={styles.customInput}
-                                    {...register('password', {
+                                {(() => {
+                                    const { ref, ...rest } = register('password', {
                                         required: 'Password is required',
                                         minLength: { value: 6, message: 'Password must be at least 6 characters' }
-                                    })}
-                                    intent={errors.password ? 'danger' : 'none'}
-                                />
+                                    });
+                                    return (
+                                        <InputGroup
+                                            placeholder="Password"
+                                            type="password"
+                                            className={styles.customInput}
+                                            inputRef={ref}
+                                            {...rest}
+                                            intent={errors.password ? 'danger' : 'none'}
+                                        />
+                                    );
+                                })()}
                                 {errors.password && <span style={{ color: 'red', fontSize: '0.8rem' }}>{errors.password.message as string}</span>}
                             </div>
                         </div>
