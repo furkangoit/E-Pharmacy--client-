@@ -30,9 +30,9 @@ export async function POST(request: Request) {
                 { status: 401 }
             );
         }
-    } catch (error) {
+    } catch {
         return NextResponse.json(
-            { message: 'Something went wrong' },
+            { message: 'Login failed' },
             { status: 500 }
         );
     }

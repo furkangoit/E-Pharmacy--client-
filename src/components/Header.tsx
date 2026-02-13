@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
@@ -56,7 +57,14 @@ export default function Header() {
                 padding: '20px 40px',
             } : {}}>
                 <Link href="/" className={styles.logo}>
-                    <img src="/logo.png" alt="E-Pharmacy" style={{ height: '40px' }} />
+                    <Image
+                        src="/logo.png"
+                        alt="E-Pharmacy"
+                        width={0}
+                        height={0}
+                        sizes="100vw"
+                        style={{ height: '40px', width: 'auto' }}
+                    />
                 </Link>
 
                 {/* Desktop Nav - Unified Design */}

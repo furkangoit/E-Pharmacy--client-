@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useForm } from 'react-hook-form';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -30,7 +31,14 @@ export default function LoginPage() {
         <div className={styles.pageContainer}>
             {/* Logo in top left */}
             <div className={styles.logoContainer}>
-                <img src="/logo.png" alt="Logo" style={{ height: '32px' }} />
+                <Image
+                    src="/logo.png"
+                    alt="Logo"
+                    width={0}
+                    height={0}
+                    sizes="100vw"
+                    style={{ height: '32px', width: 'auto' }}
+                />
                 <span>E-Pharmacy</span>
             </div>
 
@@ -44,7 +52,7 @@ export default function LoginPage() {
                     </h1>
 
                     {/* Floating Pill Image */}
-                    <img src="/register-hero.png" alt="Pill" className={styles.floatingImage} />
+                    <Image src="/register-hero.png" alt="Pill" width={400} height={400} className={styles.floatingImage} priority />
                 </div>
 
                 {/* Right Side: Form */}
@@ -104,7 +112,7 @@ export default function LoginPage() {
                         </Button>
 
                         <div className={styles.footerText}>
-                            Don't have an account? <Link href="/register" style={{ color: '#8A8A89', textDecoration: 'none' }}>Register</Link>
+                            Don&apos;t have an account? <Link href="/register" style={{ color: '#8A8A89', textDecoration: 'none' }}>Register</Link>
                         </div>
                     </form>
                 </div>

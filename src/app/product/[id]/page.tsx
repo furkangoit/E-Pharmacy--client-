@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useState, use, useEffect } from 'react';
 import Button from '@/components/Button';
 import { productService } from '@/services/product.service';
@@ -68,9 +69,11 @@ export default function ProductDetailsPage({ params }: { params: Promise<{ id: s
                 <div style={{
                     flex: 1, minWidth: '350px', background: '#F7F8FA', borderRadius: '20px',
                     display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '500px',
-                    padding: '40px'
+                    padding: '40px', position: 'relative'
                 }}>
-                    <img src={product.image} alt={product.name} style={{ maxWidth: '100%', maxHeight: '400px', objectFit: 'contain' }} />
+                    <div style={{ position: 'relative', width: '100%', height: '400px' }}>
+                        <Image src={product.image} alt={product.name} fill style={{ objectFit: 'contain' }} />
+                    </div>
                 </div>
 
                 <div style={{ flex: 1, minWidth: '350px', display: 'flex', flexDirection: 'column', paddingTop: '20px' }}>

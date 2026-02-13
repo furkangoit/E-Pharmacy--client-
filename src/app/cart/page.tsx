@@ -1,5 +1,7 @@
 'use client';
 
+import Image from 'next/image';
+
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Button from '@/components/Button';
@@ -110,12 +112,14 @@ export default function CartPage() {
                                 <div style={{
                                     width: '70px', height: '70px', background: 'white', borderRadius: '12px',
                                     display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', padding: '8px',
-                                    border: '1px solid #E8E8E8'
+                                    border: '1px solid #E8E8E8',
+                                    position: 'relative'
                                 }}>
-                                    <img
-                                        src={item.product.image}
+                                    <Image
+                                        src={item.product.image || '/placeholder.png'}
                                         alt={item.product.name}
-                                        style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+                                        fill
+                                        style={{ objectFit: 'contain' }}
                                     />
                                 </div>
                                 <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>

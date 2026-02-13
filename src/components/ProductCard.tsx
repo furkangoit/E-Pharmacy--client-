@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Button from './Button';
 import styles from './ProductCard.module.css';
 import EllipsisText from 'react-ellipsis-text';
@@ -44,9 +45,15 @@ export default function ProductCard({ id, name, category, price, image }: Produc
         <>
             <div className={styles.card}>
                 {/* Product Image */}
-                <div className={styles.imageWrapper} style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    {image ? (
-                        <img src={image} alt={name} style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }} />
+                <div className={styles.imageContainer}>
+                    {image && (image.startsWith('/') || image.startsWith('http')) ? (
+                        <Image
+                            src={image}
+                            alt={name}
+                            fill
+                            style={{ objectFit: 'contain' }}
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                        />
                     ) : (
                         <div className={styles.placeholderImg}>💊</div>
                     )}

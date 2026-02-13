@@ -27,7 +27,7 @@ export async function POST(request: Request) {
             token: 'mock-jwt-token-' + Date.now()
         }, { status: 201 });
 
-    } catch (error) {
+    } catch {
         return NextResponse.json(
             { message: 'Registration failed' },
             { status: 500 }

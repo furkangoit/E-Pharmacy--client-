@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import Button from '../Button';
 import styles from './home.module.css';
@@ -26,16 +27,17 @@ export default function AddPharmacy() {
                         </Button>
                     </Link>
                 </div>
-                <div className={styles.addPharmacyImage}>
-                    <img
+                <div className={styles.addPharmacyImage} style={{ position: 'relative', width: '100%', minHeight: '300px' }}>
+                    <Image
                         src="/products/add_pharmacy_bg.png"
                         alt="Add Pharmacy"
+                        fill
                         style={{
-                            width: '100%',
-                            height: 'auto',
+                            objectFit: 'cover',
                             borderRadius: '20px',
                             boxShadow: '0 10px 30px rgba(0,0,0,0.1)'
                         }}
+                        sizes="(max-width: 768px) 100vw, 50vw"
                     />
                 </div>
             </section>

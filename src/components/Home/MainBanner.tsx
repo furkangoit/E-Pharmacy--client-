@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import styles from './home.module.css';
 
 export default function MainBanner() {
@@ -14,11 +15,11 @@ export default function MainBanner() {
 
             {/* Centered Hero Image */}
             <div className={styles.bannerImage} style={{ marginTop: '40px', position: 'relative', width: '100%', height: '350px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <img
+                <Image
                     src="/products/medicine_pills_3d.png"
                     alt="Healthcare Product"
+                    fill
                     style={{
-                        height: '100%',
                         objectFit: 'contain',
                         filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.2))'
                     }}
